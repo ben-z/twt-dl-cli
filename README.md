@@ -41,7 +41,7 @@ npx twt-dl-cli@latest --help
 ### Example:
 
 ```sh
-npx twt-dl-cli@latest https://twitter.com/mattpocockuk/status/1592130978234900484
+npx twt-dl-cli@latest https://twitter.com/mattpocockuk/status/1592130978234900484 --output /path/to/output.mp4
 ```
 
 ![twt-dl-cli](usage.png)
@@ -88,3 +88,19 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## Documentation for `--output` flag
+
+The `--output` flag allows you to specify the output path for the downloaded video file. If the `--output` flag is not provided, the output path defaults to the current date.
+
+### Usage
+
+```sh
+npx twt-dl-cli@latest <twitter url> --output <output path>
+```
+
+### Example
+
+```sh
+npx twt-dl-cli@latest https://twitter.com/mattpocockuk/status/1592130978234900484 --output /path/to/output.mp4
+```

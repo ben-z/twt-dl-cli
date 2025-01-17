@@ -32,6 +32,11 @@ const argv = cli({
       description: "Allow to download video (yes/no)",
       default: "yes",
     },
+    // Parses `--output` as a string
+    output: {
+      type: String,
+      description: "Specify the output path",
+    },
   },
 });
 
@@ -39,7 +44,7 @@ async function main() {
   const video = await downloadVideo(argv._?.twitterUrl);
   console.log(video);
   if (argv.flags.download === "yes" && video) {
-    await downloadFile(video);
+    await downloadFile(video, argv.flags.output);
   }
 }
 

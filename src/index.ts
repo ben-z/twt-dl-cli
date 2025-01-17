@@ -50,8 +50,9 @@ export async function downloadVideo(url?: string) {
 // TODO: add output directory if needed
 export async function downloadFile(
   fileUrl: string,
-  outputFile = join(process.env.PWD ?? process.cwd(), `${Date.now()}.mp4`),
+  outputPath?: string,
 ) {
+  const outputFile = outputPath ?? join(process.env.PWD ?? process.cwd(), `${Date.now()}.mp4`);
   const spinner = ora("Downloading file...").start();
 
   const writeStream = createWriteStream(outputFile);
